@@ -1,0 +1,1 @@
+web: gunicorn stima-chat-bot.wsgi --log-file -
