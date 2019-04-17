@@ -71,12 +71,12 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     // or we can use replyMessage() instead to send reply message
                     // $textMessageBuilder = new TextMessageBuilder($event['message']['text']);
                     // $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-    
-                    return $response->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
                 }
             
             }
         }
+        $response->write('OK');
+        return $response;
     }
 });
 
