@@ -1,1 +1,1 @@
-web: gunicorn stima-chat-bot.wsgi --log-file -
+web: vendor/bin/heroku-php-apache2 web/
