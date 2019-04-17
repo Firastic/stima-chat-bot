@@ -1,7 +1,10 @@
 {
     "require": {
         "linecorp/line-bot-sdk": "^3.8",
-        "slim/slim": "^3.12",
-        "heroku/heroku-buildpack-php": "^154.0"
+        "slim/slim": "^3.12"
+    },
+
+    "require-dev": {
+    	"heroku/heroku-buildpack-php": "^154.0"
     }
 }
