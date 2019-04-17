@@ -10,10 +10,13 @@ use \LINE\LINEBot\SignatureValidator as SignatureValidator;
  
 // set false for production
 $pass_signature = true;
- 
+if(getenv("PRODUCTION") !== false){
+    $pass_signature = false;
+} 
+
 // set LINE channel_access_token and channel_secret
-$channel_access_token = "rME1fEayO7CdPqVqjslYaNFFyJ5Neg4CuNdbtQLM+i0h0l6iUL+4ruWaR+bwnMmiDVpWDIhpVHNUukYnkhj3GNCcDDcJ+iXQQ4yv9N/3JvjXoGcV9vlERksBlJ5zulvw2GErUNm094P8D4EMIagHegdB04t89/1O/w1cDnyilFU=";
-$channel_secret = "636be765d69bcd149d1d68831d432e11";
+$channel_access_token = "7GQ5Dn4ioKUGVSHNmUoWLh26TrsTOd3C/T8nyzXcknzbMQbXIpZxFHylbE/nXADGpL5Ksev6WJF+GiTxkBdN8Hwsliz+9E8tTTJEaZ2zpMvRflaCFcRh7pWYxMdhHd66LpOCaxM7MXqUTJ3O4weqFgdB04t89/1O/w1cDnyilFU=";
+$channel_secret = "32cf0cd5f73ae9ec84f88afda70c32b8";
 
 // inisiasi objek bot
 $httpClient = new CurlHTTPClient($channel_access_token);
@@ -25,7 +28,7 @@ $configs =  [
 $app = new Slim\App($configs);
  
 // buat route untuk url homepage
-$app->get('/', function($req, $res)
+$app->get('/a', function($req, $res)
 {
   	echo "Welcome at Slim Framework";
 });
