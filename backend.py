@@ -1,4 +1,6 @@
 import re
+# KMP akan mengembalikan persentase kebenaran terhadap apakah string S2 berada pada strirng S1
+# dengan menggunakan algoritma Knuth-Morris-Pratt
 def KMP(S1,S2):
     n = len(S1)
     m = len(S2)
@@ -39,6 +41,8 @@ def computeFail(S2):
         else:
             i+=1
     return fail
+# BM akan mengembalikan persentase kebenaran terhadap apakah string S2 berada pada string S1
+# dengan menggunakan Boyer Moore algorithm
 def BM(S1,S2):
     last = buildLast(S2)
     n = len(S1)
@@ -74,12 +78,23 @@ def buildLast(S2):
     for i in range(0,len(S2)):
         last[ord(S2[i])] = i
     return last
-
+# regex akan mengembalikan true atau false terhadap apakah string S2 berada pada string S1
+# dengan menggunakan regular expression
 def regex(S1,S2):
     list = S2.split()
-
-if __name__ == "__main__":
-    S1 = "Apakah chatbot itu ? bagus"
-    S2 = "Apa chatbot itu ?"
-    j = BM(S1,S2)
-    print(j)
+    newlist = []
+    exceptchar = ['[','\\','^','$','.','|','?','*','+','(',')']
+    i = 0
+    for x in list:
+        if(x not in exceptchar):
+            newlist.append(x)
+        else:
+            s = '\\' + x
+            newlist.append(s) 
+    while(i<len(newlist)):
+        m = re.search(newlist[i],S1,re.IGNORECASE)
+        if(m):
+            i+=1
+        else:
+            return False
+    return True
