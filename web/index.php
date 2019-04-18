@@ -9,7 +9,7 @@ use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 use \LINE\LINEBot\SignatureValidator as SignatureValidator;
  
 // set false for production
-$pass_signature = true;
+$pass_signature = false;
 if(getenv("PRODUCTION") !== false){
     $pass_signature = false;
 } 
@@ -33,7 +33,7 @@ $app->get('/a', function($req, $res)
   	echo "Welcome at Slim Framework";
 });
 
-$app->post('/webhook', function ($request, $response) use ($bot, $pass_signature)
+$app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $channel_secret)
 {
     // get request body and line signature header
     $body        = file_get_contents('php://input');
