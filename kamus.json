@@ -1,0 +1,441 @@
+{
+    "saya": {
+        "tag": "pron", 
+        "sinonim": [
+            "abdi", 
+            "aku", 
+            "ana ", 
+            "beta", 
+            "ego", 
+            "gua ", 
+            "hamba", 
+            "kami", 
+            "kawula", 
+            "kita ", 
+            "patik", 
+            "p ya"
+        ]
+    }, 
+    "aku": {
+        "tag": "pron", 
+        "sinonim": [
+            "abdi", 
+            "ai", 
+            "ajeh", 
+            "ambo", 
+            "ana ", 
+            "awak", 
+            "aye", 
+            "beta", 
+            "ego", 
+            "gua", 
+            "gue ", 
+            "hamba", 
+            "kawula", 
+            "patik", 
+            "sanda", 
+            "saya", 
+            "sini"
+        ]
+    },
+    "memperdayai": {
+        "tag": "v", 
+        "sinonim": [
+            "melabu ", 
+            "melebun", 
+            "melecun", 
+            "melibas", 
+            "membekuk ", 
+            "membodohi", 
+            "membohongi", 
+            "membuayai ", 
+            "memerangkapi", 
+            "memongahi", 
+            "mempermainkan ", 
+            "mencelakakan", 
+            "mencurangi", 
+            "mendustai", 
+            "mengakali", 
+            "mengecoh", 
+            "mengelabui", 
+            "menghalusi", 
+            "menghelah", 
+            "menghelat", 
+            "mengibuli", 
+            "mengecek", 
+            "mengecong", 
+            "mengkhianati", 
+            "mengomedikan", 
+            "menipu", 
+            "menjatuhkan", 
+            "menjerumuskan", 
+            "menokoh", 
+            "menyesatkan", 
+            "menyikut", 
+            "menyilap", 
+            "merakut"
+        ]
+    },
+    "membuat": {
+        "tag": "v", 
+        "sinonim": [
+            "melahirkan", 
+            "melaksanakan", 
+            "melakukan", 
+            "melancarkan", 
+            "melangsung"
+        ]
+    }, 
+    "siapa": {
+        "tag": "pron", 
+        "sinonim": [
+            "sapa"
+        ]
+    }, 
+    "sebutan": {
+        "tag": "n", 
+        "sinonim": [
+            "gelar", 
+            "identitas", 
+            "julukan", 
+            "label", 
+            "nama", 
+            "panggilan", 
+            "predikat", 
+            "titel", 
+            "istilah"
+        ]
+    }, 
+    "keunggulan": {
+        "tag": "n", 
+        "sinonim": [
+            "eminensi", 
+            "kelebihan", 
+            "keutamaan", 
+            "kualitas", 
+            "merek ", 
+            "mutu", 
+            "nama", 
+            "pamor", 
+            "reputasi", 
+            "superioritas", 
+            "supremasi"
+        ]
+    }, 
+    "mengapa": {
+        "tag": "pron", 
+        "sinonim": [
+            "apa pasal", 
+            "apa sebab", 
+            "kenapa", 
+            "kok"
+        ]
+    }, 
+    "kenapa": {
+        "tag": "pron", 
+        "sinonim": [
+            "cak kok", 
+            "mengapa"
+        ]
+    }, 
+    "bagaimana": {
+        "tag": "pron", 
+        "sinonim": [
+            "betapa", 
+            "dengan cara apa", 
+            "dengan jalan apa", 
+            "macam mana"
+        ]
+    }, 
+    "bila": {
+        "tag": "p", 
+        "sinonim": [
+            "andaikan", 
+            "andaikata", 
+            "apabila", 
+            "asalkan", 
+            "bilamana", 
+            "bilamasa", 
+            "jika", 
+            "kalau", 
+            "kapan", 
+            "ketika", 
+            "manakala", 
+            "masa", 
+            "misalnya", 
+            "pada"
+        ]
+    },
+    "tahun": {
+        "tag": "n", 
+        "sinonim": [
+            "tarikh", 
+            "warsa"
+        ]
+    }, 
+    "ulang tahun": {
+        "tag": "v", 
+        "sinonim": [
+            "dies natalis", 
+            "hari jadi", 
+            "hari lahir"
+        ]
+    }, 
+    "manifesto": {
+        "tag": "n", 
+        "sinonim": [
+            "deklarasi", 
+            "maklumat", 
+            "pemakluman", 
+            "pengumuman", 
+            "pernyataan", 
+            "proklamasi", 
+            "wara-wara"
+        ]
+    }, 
+    "notifikasi": {
+        "tag": "n", 
+        "sinonim": [
+            "catatan", 
+            "deklarasi", 
+            "informasi", 
+            "pariwara", 
+            "pemberitahuan", 
+            "pengumuman", 
+            "peringatan", 
+            "proklamasi", 
+            "publikasi"
+        ]
+    }, 
+    "publikasi": {
+        "tag": "n", 
+        "sinonim": [
+            "embaran", 
+            "notifikasi", 
+            "permakluman", 
+            "pengumuman", 
+            "proklamasi", 
+            "siaran"
+        ]
+    }, 
+    "pengesahan": {
+        "tag": "n", 
+        "sinonim": [
+            "akreditasi", 
+            "ikrar", 
+            "izin", 
+            "justifikasi", 
+            "konfirmasi", 
+            "konfirmasi", 
+            "legalisasi", 
+            "pelulusan", 
+            "pemastian", 
+            "pembenaran", 
+            "pemberlakukan", 
+            "pembuktian", 
+            "penahkikan", 
+            "penandatanganan", 
+            "penegasan", 
+            "penegasan", 
+            "peneguhan", 
+            "penentuan", 
+            "penerimaan", 
+            "penetapan", 
+            "pengabsahan", 
+            "pengabulan", 
+            "pengakuan", 
+            "pengikraran", 
+            "pengiktirafan", 
+            "pengisbatan", 
+            "pengizinan", 
+            "penguatan", 
+            "pengukuhan", 
+            "pengumuman", 
+            "penvalidan", 
+            "penyahihan", 
+            "penyempurnaan", 
+            "penyetujuan", 
+            "penyungguhan", 
+            "peresmian", 
+            "perizinan", 
+            "pernyataan", 
+            "persetujuan", 
+            "proklamasi", 
+            "ratifikasi", 
+            "testimoni"
+        ]
+    }, 
+    "proklamasi": {
+        "tag": "n", 
+        "sinonim": [
+            "deklarasi", 
+            "embaran", 
+            "maklumat", 
+            "manifesto", 
+            "notifikasi", 
+            "pemakluman", 
+            "pemberitahuan", 
+            "pengumuman", 
+            "pernyataan", 
+            "persiaran", 
+            "publikasi", 
+            "wara-wara"
+        ]
+    }, 
+    "deklarasi": {
+        "tag": "n", 
+        "sinonim": [
+            "keterangan", 
+            "maklumat", 
+            "manifesto", 
+            "pemakluman", 
+            "pengumuman", 
+            "pernyataan", 
+            "persiaran", 
+            "proklamasi", 
+            "wara-wara"
+        ]
+    }, 
+    "engkau": {
+        "tag": "pron", 
+        "sinonim": [
+            "anda", 
+            "anta", 
+            "awak", 
+            "encik", 
+            "engku", 
+            "ente", 
+            "kamu", 
+            "kau", 
+            "kena", 
+            "lu ", 
+            "pakanira", 
+            "saudara", 
+            "sira", 
+            "situ", 
+            "tuan"
+        ]
+    }, 
+    "kok": {
+        "tag": "pron", 
+        "sinonim": [
+            "cak kenapa", 
+            "mengapa"
+        ]
+    }, 
+    "mungkin": {
+        "tag": "adv", 
+        "sinonim": [
+            "agak-agak", 
+            "barangkali", 
+            "bisa", 
+            "boleh jadi", 
+            "bisa jadi", 
+            "dapat", 
+            "harus", 
+            "kalaukalau", 
+            "kali", 
+            "kelihatannya", 
+            "kira-kira", 
+            "mana"
+        ]
+    }, 
+    "maksimal": {
+        "tag": "a", 
+        "sinonim": [
+            "maksimum", 
+            "mentok", 
+            "pol", 
+            "sebanyak-banyaknya", 
+            "setinggi-tingginya", 
+            "suntuk", 
+            "tertinggi"
+        ]
+    },
+    "minimum": {
+        "tag": "a", 
+        "sinonim": [
+            "minimal", 
+            "paling kecil", 
+            "paling"
+        ]
+    },
+    "mendapat": {
+        "tag": "v", 
+        "sinonim": [
+            "beroleh", 
+            "kena", 
+            "memenangi", 
+            "memiliki", 
+            "memperoleh", 
+            "memungut", 
+            "menanggung", 
+            "mendapatkan", 
+            "mendengar (berita)", 
+            "menderita", 
+            "menemukan", 
+            "menerima", 
+            "mengalami", 
+            "mengantongi", 
+            "menggondol", 
+            "mengidap", 
+            "menyabet", 
+            "meraih", 
+            "meraup", 
+            "merebut", 
+            "mewarisi", 
+            "terkena", 
+            "terserang (penyakit)"
+        ]
+    }, 
+    "minimal": {
+        "tag": "a", 
+        "sinonim": [
+            "minimum", 
+            "paling tidak", 
+            "sedikitnya", 
+            "sekurang-kurangnya"
+        ]
+    },
+    "ketua": {
+        "tag": "n", 
+        "sinonim": [
+            "amir", 
+            "bos", 
+            "kepala", 
+            "koordinator", 
+            "pelopor", 
+            "pemandu", 
+            "pemimpin", 
+            "pengarah", 
+            "penghulu", 
+            "presiden", 
+            "rais", 
+            "datuk", 
+            "kamitua", 
+            "pasak negeri", 
+            "pengetua", 
+            "sesepuh", 
+            "tetua"
+        ]
+    }, 
+    "pemenang": {
+        "tag": "n", 
+        "sinonim": [
+            "jago", 
+            "jagoan", 
+            "jawara", 
+            "juara", 
+            "kampiun", 
+            "pemimpin"
+        ]
+    }, 
+    "koordinator": {
+        "tag": "n", 
+        "sinonim": [
+            "ketua", 
+            "organisator", 
+            "pemimpin"
+        ]
+    } 
+}
