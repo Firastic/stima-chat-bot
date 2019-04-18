@@ -9,7 +9,7 @@ use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 use \LINE\LINEBot\SignatureValidator as SignatureValidator;
  
 // set false for production
-$pass_signature = false;
+$pass_signature = true;
 if(getenv("PRODUCTION") !== false){
     $pass_signature = false;
 } 
@@ -67,10 +67,6 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
                     $result = $bot->replyText($event['replyToken'], $reply_text);
-    
-                    // or we can use replyMessage() instead to send reply message
-                    // $textMessageBuilder = new TextMessageBuilder($event['message']['text']);
-                    // $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
                 }
             
             }
@@ -81,13 +77,19 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 });
 
 function processMessage($message, $user_id) {
-    if (strpos($message,"!hi") !== false) {
-
-        $reply_text = "Hello!";
-        return $reply_text;
-    }
-
+    $arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
     $reply_text = "Maaf, masukan tidak dikenali. Masukan input sesuai format";
+    if (strpos($message,"!hi") !== false) {
+        
+        $reply_text = "Hello!";
+    } else {
+        foreach($arr as $qa){
+            if(strpos($message,$qa["question"]) !== false){
+                $reply_text = $qa["answer"];
+            }
+        }
+    }
+    
     return $reply_text;
 }
 
