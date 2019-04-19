@@ -28,9 +28,12 @@ $configs =  [
 $app = new Slim\App($configs);
  
 // buat route untuk url homepage
-$app->get('/a', function($req, $res)
+$app->get('/', function($req, $res)
 {
   	echo "Welcome at Slim Framework";
+    //$array = [];
+    //$array = getDatabase($array);
+    //print_r($array);
 });
 
 $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $channel_secret)
@@ -77,10 +80,12 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 });
 
 function processMessage($message, $user_id) {
-    $arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
+    $arr = [];
+    $arr = getDatabase($arr);
+    //$arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
     $reply_text = "Maaf, masukan tidak dikenali. Masukan input sesuai format";
     if (strpos($message,"!hi") !== false) {
-        
+
         $reply_text = "Hello!";
     } else {
         foreach($arr as $qa){
@@ -88,9 +93,24 @@ function processMessage($message, $user_id) {
                 $reply_text = $qa["answer"];
             }
         }
-    }
-    
+    }   
     return $reply_text;
+}
+
+function getDatabase($array){
+    exec('cd .. && python database.py', $output);
+    //echo $output[0];
+    $output[0] = str_replace("[", "", $output[0]);
+    $convertedArray = explode(']', $output[0]);
+    foreach($convertedArray as $pair){
+        if($pair == NULL)break; 
+        $pair = str_replace("'", "", $pair);
+        $temp = explode(',', $pair);
+        array_push($array, array("question" => $temp[0], "answer" => $temp[1]));
+    }
+    //print_r($convertedArray[0]);
+    //print_r($array[0]);
+    return $array;
 }
 
 $app->run();
