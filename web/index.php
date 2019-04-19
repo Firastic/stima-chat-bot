@@ -112,6 +112,7 @@ function getDatabase($array){
         //print_r($pair);
         $pair = str_replace("'", "", $pair);
         $temp = explode(',', $pair);
+        $temp[1] = substr($temp[1], 1);
         //print_r($temp);
         array_push($array, array("question" => $temp[0], "answer" => $temp[1]));
     }
