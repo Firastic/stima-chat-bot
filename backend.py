@@ -85,6 +85,7 @@ def regex(S1,S2):
     newlist = []
     exceptchar = ['[','\\','^','$','.','|','?','*','+','(',')']
     i = 0
+    location = []
     for x in list:
         if(x not in exceptchar):
             newlist.append(x)
@@ -95,6 +96,11 @@ def regex(S1,S2):
         m = re.search(newlist[i],S1,re.IGNORECASE)
         if(m):
             i+=1
+            location.append(m.start())
         else:
             return False
+    for i in range(0,len(location)):
+        for j in range(i,len(location)):
+            if(location[i]>location[j]):
+                return False
     return True
