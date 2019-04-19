@@ -31,9 +31,9 @@ $app = new Slim\App($configs);
 $app->get('/', function($req, $res)
 {
   	echo "Welcome at Slim Framework";
-    //$array = [];
-    //$array = getDatabase($array);
-    //print_r($array);
+    $array = [];
+    $array = getDatabase($array);
+    print_r($array);
 });
 
 $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $channel_secret)
@@ -100,12 +100,19 @@ function processMessage($message, $user_id) {
 function getDatabase($array){
     exec('cd .. && python database.py', $output);
     //echo $output[0];
-    $output[0] = str_replace("[", "", $output[0]);
+    $output[0] = str_replace(", [", "", $output[0]);
+    $output[0] = str_replace("[", "", $output[0]);  
+    $output[0] = str_replace("\\n", "", $output[0]);
+    $output[0] = str_replace("\\r", "", $output[0]);
+    //print_r($output[0]);
     $convertedArray = explode(']', $output[0]);
+    //print_r($convertedArray);
     foreach($convertedArray as $pair){
         if($pair == NULL)break; 
+        //print_r($pair);
         $pair = str_replace("'", "", $pair);
         $temp = explode(',', $pair);
+        //print_r($temp);
         array_push($array, array("question" => $temp[0], "answer" => $temp[1]));
     }
     //print_r($convertedArray[0]);
