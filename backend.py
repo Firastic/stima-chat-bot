@@ -1,6 +1,21 @@
 import re
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()
+factory2 = StopWordRemoverFactory()
+stopword = factory2.create_stop_word_remover()
 # KMP akan mengembalikan persentase kebenaran terhadap apakah string S2 berada pada strirng S1
 # dengan menggunakan algoritma Knuth-Morris-Pratt
+def readFile(filename):
+    content = []
+    file = open(filename,"r")
+    content = file.readlines()
+    db = []
+    for i in range(len(content)):
+        db.append([])
+        db[i] = content[i].split("?")
+    return db
 def KMP(S1,S2):
     n = len(S1)
     m = len(S2)
@@ -8,7 +23,7 @@ def KMP(S1,S2):
     i = 0
     j = 0
     k = 0
-    arrKecocokan = []
+    arrKecocokan = [0]
     while(i<n):
         if(S2[j] == S1[i]):
             i+=1
@@ -49,15 +64,15 @@ def BM(S1,S2):
     m = len(S2)
     i = m-1
     k = 0
-    listkesamaan = []
+    listkesamaan = [0]
     if(i>n-1):
-        return -1
+        return 0
     j = m-1
     while (True):
         if(S2[j] == S1[i]):
             k+=1
             if(j==0):
-                break
+                return 1
             else:
                 i-=1
                 j-=1
@@ -69,7 +84,7 @@ def BM(S1,S2):
             k = 0
         if(i>n-1):
             break
-    nilaimax =max(listkesamaan)
+    nilaimax = max(listkesamaan)
     return nilaimax/m
 def buildLast(S2):
     last = []
@@ -104,3 +119,29 @@ def regex(S1,S2):
             if(location[i]>location[j]):
                 return False
     return True
+def searchWithBM(QnA,sentence):
+    kecocokan = 0
+    for i in range(0,len(QnA)):
+        pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+        sentencebaru = stemmer.stem(stopword.remove(sentence))
+        kecocokan = BM(pertanyaan,sentencebaru)
+        if(kecocokan == 1):
+            return QnA[i][1]
+def searchWithKMP(QnA,sentence):
+    kecocokan = 0
+    for i in range(0,len(QnA)):
+        pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+        sentencebaru = stemmer.stem(stopword.remove(sentence))
+        kecocokan = KMP(pertanyaan,sentencebaru)
+        if(kecocokan == 1):
+            return QnA[i][1]
+
+def searchWithRegEx(QnA,sentence):
+    kecocokan = 0
+    for i in range(0,len(QnA)):
+        pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+        sentencebaru = stemmer.stem(stopword.remove(sentence))
+        kecocokan = regex(pertanyaan,sentencebaru)
+        if(kecocokan):
+            return QnA[i][1]
+
