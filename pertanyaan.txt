@@ -22,3 +22,14 @@ Siapa nama kamu? Saia
 Apa kabarmu? aku baik-baik saja, terima kasih sudah menanyakan
 Apa kamu sudah punya pacar? belum nih, mau ga jadi pacar aku?
 Siapa kamu? aku adalah chatbot yang dibuat oleh iwang, kikoy, dan billy. Salam kenal ya hehe :)
+Dimanakah kamu sekarang? Institut Teknologi Bandung, Indonesia
+IP iwang berapa? Sarip woi!
+apa itu python? Python adalah bahasa pemrograman yang ditafsirkan, interaktif, dan berorientasi objek.Ini menggabungkan modul, pengecualian, pengetikan dinamis, tipe data dinamis tingkat sangat tinggi, dan kelas. Python menggabungkan kekuatan luar biasa dengan sintaksis yang sangat jelas. Ini memiliki antarmuka ke banyak panggilan sistem dan perpustakaan, serta berbagai sistem jendela, dan dapat diperluas dalam C atau C ++. Ini juga dapat digunakan sebagai bahasa ekstensi untuk aplikasi yang membutuhkan antarmuka yang dapat diprogram. Akhirnya, Python portabel: ia berjalan pada banyak varian Unix, pada Mac, dan pada Windows 2000 dan yang lebih baru.
+apa itu c++? C ++ adalah bahasa pemrograman serba guna yang dikembangkan oleh Bjarne Stroustrup sebagai perpanjangan dari bahasa C, atau "C with Classes". Ini memiliki fitur pemrograman imperatif, berorientasi objek dan generik, sementara juga menyediakan fasilitas untuk manipulasi memori tingkat rendah. Ini hampir selalu diimplementasikan sebagai bahasa yang dikompilasi, dan banyak vendor menyediakan kompiler C++, termasuk Free Software Foundation, Microsoft, Intel, dan IBM, sehingga tersedia di banyak platform.
+apa itu java? Java adalah bahasa pemrograman serbaguna yang berbasis kelas, berorientasi objek, dan secara khusus dirancang untuk memiliki dependensi implementasi sesedikit mungkin. Ini dimaksudkan agar pengembang aplikasi "menulis sekali, jalankan di mana saja" (WORA), yang berarti kode Java yang dikompilasi dapat berjalan di semua platform yang mendukung Java tanpa perlu melakukan kompilasi ulang. Aplikasi Java biasanya dikompilasi ke "bytecode" yang dapat berjalan pada Java virtual machine (JVM) apa pun arsitektur komputer yang mendasarinya. Sintaksis Java mirip dengan C dan C ++, tetapi memiliki lebih sedikit fasilitas tingkat rendah daripada keduanya. Pada 2018, Java menurut GitHub adalah salah satu bahasa pemrograman paling populer yang digunakan, khususnya untuk aplikasi web server-klien, dengan 9 juta pengembang yang dilaporkan.
+Halo?Halo!
+kamu itu apa sih? Halo, Aku Saia adalah chatbot sederhana yang dibuat oleh iwang-kikoy-billy untuk memenuhi tugas besar 3 strategi algoritma di Institut Teknologi Bandung.
+siapa nama presiden Indonesia? Joko Widodo
+siapa Pasangan calon no 1 saat pemilu 2019?Jokowi-Amin
+siapa Pasangan calon no 2 saat pemilu 2019?Prabowo-Sandi
+dimana tempat nubes anak IF? labtek V
