@@ -74,22 +74,16 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                         'replyToken' => $event['replyToken'],
                         'messages' => [
                                 [
+                                    'type' => 'text',
+                                    'text' => $reply_text
+                                ],
+                                [
                                     'type' => 'image',
                                     'originalContentUrl' => '../assets/playful.jpeg'
                                 ]
                             ]
                         ]);
-                    $bot->replyMessage([
-                        'replyToken' => $event['replyToken'],
-                        'messages' => [
-                                [
-                                    'type' => 'text',
-                                    'originalContentUrl' => 'ehe'
-                                ]
-                            ]
-                        ]);
                 }
-            
             }
         }
         $response->write('OK');
