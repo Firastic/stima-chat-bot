@@ -120,10 +120,7 @@ def regex(S1,S2):
 def searchWithBM(QnA,sentence):
     kecocokan = 0
     listQnA = []
-    print(sentence)
-    print(0)
     sentencebaru = stemmer.stem(stopword.remove(sentence))
-    print(1)
     for i in range(0,len(QnA)):
         pertanyaan = QnA[i][0]
         kecocokan = BM(pertanyaan,sentencebaru)
@@ -131,7 +128,6 @@ def searchWithBM(QnA,sentence):
             return [kecocokan,QnA[i]][1]
         elif kecocokan >= 0.9:
             listQnA.append([kecocokan,QnA[i]])
-    print(2)
     #nggak tau ini bisa atau nggak
     if(len(listQnA) == 0):
         for i in range(0,len(QnA)):
@@ -207,7 +203,6 @@ if __name__ == "__main__":
         temp = getSinonimKata(question)
         if(mode.lower() == 'bm'):
             for word in temp:
-                print(word)
                 if (searchWithBM(questionList,word) != None):
                     print(searchWithBM(questionList,word)[1])
                     break
