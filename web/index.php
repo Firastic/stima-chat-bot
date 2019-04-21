@@ -5,6 +5,7 @@ use \LINE\LINEBot;
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 use \LINE\LINEBot\SignatureValidator as SignatureValidator;
  
@@ -33,7 +34,26 @@ $app->get('/', function($req, $res)
   	echo "Welcome at Slim Framework";
     $array = [];
     $array = getDatabase($array);
-    print_r($array);
+    //print_r($array);
+    print_r([
+                                [
+                                    'type' => 'text',
+                                    'text' => "0000"
+                                ],
+                                [
+                                    'type' => 'text',
+                                    'text' => "Nais"
+                                ],                 
+                                [
+                                    'type' => 'image',
+                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
+                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
+                                ]
+                            ]);
+});
+
+$app->get('/playful', function($req, $res){
+    echo '<img src="assets/playful.jpeg">';
 });
 
 $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $channel_secret)
@@ -69,9 +89,23 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $user_id = $event['source']['userId'];
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
-                    $result = $bot->replyText($event['replyToken'], $reply_text);
+                    $replyMessage = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+                    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply_text);
+                    $replyMessage->add($textMessageBuilder);
+                    $emotion = "playful.jpeg";
+                    if(strpos($reply_text, "ehe") !== false){
+                        $emotion = "confused.jpeg";
+                    } else if(strpos($message, "Siapa") !== false){
+                        $emotion = "happy.jpeg";
+                    } else if(strpos($message, "iwang") !== false){
+                        $emotion = "confused.jpeg";
+                    } else if(strpos($message, "apa") !== false){
+                        $emotion = "proud.jpeg";
+                    }
+                    $imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://stima-chat-bot.herokuapp.com/assets/' . $emotion, 'https://stima-chat-bot.herokuapp.com/assets/' . $emotion);
+                    $replyMessage->add($imageMessageBuilder);
+                    $result = $bot->replyMessage($event['replyToken'], $replyMessage);
                 }
-            
             }
         }
         $response->write('OK');
@@ -83,7 +117,7 @@ function processMessage($message, $user_id) {
     $arr = [];
     $arr = getDatabase($arr);
     //$arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
-    $reply_text = "Maaf, masukan tidak dikenali. Masukan input sesuai format";
+    $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
     if (strpos($message,"!hi") !== false) {
 
         $reply_text = "Hello!";
@@ -122,3 +156,14 @@ function getDatabase($array){
 }
 
 $app->run();
+
+/*,
+                                [
+                                    'type' => 'text',
+                                    'text' => "Nais"
+                                ],                 
+                                [
+                                    'type' => 'image',
+                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
+                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
+                                ]*/
