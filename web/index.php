@@ -111,17 +111,17 @@ function processMessage($message, $user_id) {
     if($GLOBALS["mode"] == 0)$modeStr = "kmp";
     else if($GLOBALS["mode"] == 1)$modeStr = "bm";
     else if($GLOBALS["mode"] == 2)$modeStr = "regex";
-    if($message.lower() == "kmp"){
+    if(strtolower($message) == "kmp"){
         $GLOBALS["mode"] = 0;
-        $reply_text = "Okok aku ganti jadi KMP"
-    } else if($message.lower() == "bm"){
+        $reply_text = "Okok aku ganti jadi KMP";
+    } else if(strtolower($message) == "bm"){
         $GLOBALS["mode"] = 1;
-        $reply_text = "Okok aku ganti jadi Boyer-Moore"
-    } else if($message.lower() == "regex"){
+        $reply_text = "Okok aku ganti jadi Boyer-Moore";
+    } else if(strtolower($message) == "regex"){
         $GLOBALS["mode"] = 2;
-        $reply_text = "Okok aku ganti jadi Regex"
+        $reply_text = "Okok aku ganti jadi Regex";
     } else {
-        exec('cd .. && python backend.py ' + $modeStr + ' "' . $message . '"', $output);
+        exec('cd .. && python backend.py ' . $modeStr . ' "' . $message . '"', $output);
         if($output[0] !== "None"){
             $reply_text = $output[0];
             $reply_text = ltrim($reply_text);
