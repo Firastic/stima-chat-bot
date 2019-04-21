@@ -10,15 +10,22 @@ def readFile(filename):
         db[i][0] += '?'
     return db
 
+def writeFile(input, filename):
+    content = []
+    file = open(filename,"w+")
+    for question, answer in input:
+        file.write(question + '? ' + answer)
+    file.close()
+
 def load(filename):	
     with open(filename) as data_file:
         data = json.load(data_file)	
 
     return data
 
-mydict = load("dict.json")
+#mydict = load("dict.json")
 
-def getSinonim(word):
+def getSinonim(mydict, word):
     jawaban = [word]
     if word in mydict.keys():
         jawaban.extend(mydict[word]['sinonim'])

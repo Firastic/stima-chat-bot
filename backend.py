@@ -4,6 +4,7 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 import database
 import sys
+tempDict = database.load('dict.json')
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 factory2 = StopWordRemoverFactory()
@@ -119,22 +120,26 @@ def regex(S1,S2):
 def searchWithBM(QnA,sentence):
     kecocokan = 0
     listQnA = []
+    print(sentence)
+    print(0)
     sentencebaru = stemmer.stem(stopword.remove(sentence))
+    print(1)
     for i in range(0,len(QnA)):
-        pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+        pertanyaan = QnA[i][0]
         kecocokan = BM(pertanyaan,sentencebaru)
         if(kecocokan == 1):
             return [kecocokan,QnA[i]][1]
         elif kecocokan >= 0.9:
             listQnA.append([kecocokan,QnA[i]])
+    print(2)
     #nggak tau ini bisa atau nggak
     if(len(listQnA) == 0):
         for i in range(0,len(QnA)):
-            pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+            pertanyaan = QnA[i][0]
             kecocokan = BM(pertanyaan,sentencebaru)
             if(kecocokan >0.5):
                 listQnA.append([kecocokan,QnA[i]])
-    listQnA.sort(reverse = True)
+    #listQnA.sort(reverse = True)
     if(len(listQnA) == 0):
         return None
     else:
@@ -145,7 +150,7 @@ def searchWithKMP(QnA,sentence):
     listQnA = []
     sentencebaru = stemmer.stem(stopword.remove(sentence))
     for i in range(0,len(QnA)):
-        pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+        pertanyaan = QnA[i][0]
         kecocokan = KMP(pertanyaan,sentencebaru)
         if(kecocokan == 1):
             listQnA.append([kecocokan,QnA[i]])
@@ -155,7 +160,7 @@ def searchWithKMP(QnA,sentence):
     #nggak tau ini bisa atau nggak
     if(len(listQnA) == 0):
         for i in range(0,len(QnA)):
-            pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+            pertanyaan = QnA[i][0]
             kecocokan = KMP(pertanyaan,sentencebaru)
             if(kecocokan > 0.5):
                 listQnA.append([kecocokan,QnA[i]])
@@ -170,7 +175,7 @@ def searchWithRegEx(QnA,sentence):
     kecocokan = False
     sentencebaru = stemmer.stem(stopword.remove(sentence))
     for i in range(0,len(QnA)):
-        pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+        pertanyaan = QnA[i][0]
         kecocokan = regex(pertanyaan,sentencebaru)
         if(kecocokan):
             return QnA[i][1]
@@ -178,13 +183,15 @@ def searchWithRegEx(QnA,sentence):
             return None
 # agar sinonim tidak menggunakan memmory yang berlebih hasil sinonim di generate dengan yield
 def getSinonimKata(pertanyaan):
+    global tempDict
     listkata = pertanyaan.split()
     listsinonim = []
     for kata in listkata:
-        listsinonim.append(database.getSinonim(kata))
+        listsinonim.append(database.getSinonim(tempDict, kata))
     listkata = []
     for element in itertools.product(*listsinonim):
         listkata.append(element)
+
     for element in listkata:
         yield (" ".join(element))
 
@@ -192,11 +199,15 @@ def getSinonimKata(pertanyaan):
 if __name__ == "__main__":
     if(len(sys.argv) == 3):
         mode = sys.argv[1]
-        questionList = database.readFile('pertanyaan.txt')
+        questionList = database.readFile('modifiedQuestion.txt')
+        #for i in range(0,len(questionList)):
+        #    questionList[i][0] = stemmer.stem(stopword.remove(questionList[i][0]))
+        #database.writeFile(questionList, 'test.txt')
         question = sys.argv[2]
         temp = getSinonimKata(question)
         if(mode.lower() == 'bm'):
             for word in temp:
+                print(word)
                 if (searchWithBM(questionList,word) != None):
                     print(searchWithBM(questionList,word)[1])
                     break
@@ -210,3 +221,8 @@ if __name__ == "__main__":
                 if (searchWithRegEx(questionList,word) != None):
                     print(searchWithRegEx(questionList,word)[1])
                     break
+    elif(len(sys.argv) == 5):
+        questionList = database.readFile('pertanyaan.txt')
+        for i in range(0,len(questionList)):
+            questionList[i][0] = stemmer.stem(stopword.remove(questionList[i][0]))
+        database.writeFile(questionList, 'modifiedQuestion.txt')

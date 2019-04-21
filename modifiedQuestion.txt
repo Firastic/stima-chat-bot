@@ -1,0 +1,52 @@
+siapa nama koordinator dosen mata kuliah strategi algoritma 2018 2019?  Rinaldi Munir
+siapa nama koordas strategi algoritma?  Kevin Andrian Liwinata
+berapa jumlah sks minimal lulus s1 itb?  144 SKS
+apa panjang sksd?  Sistem Komunikasi Satelit Domestik
+tanggal berapa ada milu tahun ini?  17 April 2019
+sudah berapa kali ada milu presiden?  4 Kali
+milu ada berapa kali tahun?  5 tahun sekali
+siapa buat anda?  Pembuat saya adalah Adyaksa Wisanggeni, Ahmad Rizqee Nurhani, Christopher Billy Setiawan
+apa stack pakai buat anda?  stack yang saya pakai adalah slim PHP
+apa nama ibukota indonesia?  DKI Jakarta
+nama ibukota indonesia sebut jakarta adalah?  Jayakarta
+siapa buat algoritma kmp?  Knuth-Morris-Prat
+siapa main catur nomor satu dunia sekarang?  Magnus Carlsen
+apa nama blackhole ada tengah galaksi bimasakti?  Blackhole M87
+siapa nama main karakter wanita rebut dua pria lagu adu rayu?  velove vexia
+berapa jumlah presiden indonesia?  Tujuh orang
+tahun berapa indonesia merdeka?  1945
+berapa tahun indonesia jajah jepang?  3 setengah tahun
+mana soekarno proklamasi merdeka indonesia?  Jl. Pegangsaan Timur No.56
+mana kantin dekat labtek 5?  Kantin Borju
+siapa nama kamu?  Saia
+apa kabar?  aku baik-baik saja, terima kasih sudah menanyakan
+apa kamu punya pacar?  belum nih, mau ga jadi pacar aku?
+siapa kamu?  aku adalah chatbot yang dibuat oleh iwang, kikoy, dan billy. Salam kenal ya hehe :)
+mana kamu sekarang?  Institut Teknologi Bandung, Indonesia
+ip iwang berapa?  Sarip woi!
+apa python?  Python adalah bahasa pemrograman yang ditafsirkan, interaktif, dan berorientasi objek.Ini menggabungkan modul, pengecualian, pengetikan dinamis, tipe data dinamis tingkat sangat tinggi, dan kelas. Python menggabungkan kekuatan luar biasa dengan sintaksis yang sangat jelas. Ini memiliki antarmuka ke banyak panggilan sistem dan perpustakaan, serta berbagai sistem jendela, dan dapat diperluas dalam C atau C ++. Ini juga dapat digunakan sebagai bahasa ekstensi untuk aplikasi yang membutuhkan antarmuka yang dapat diprogram. Akhirnya, Python portabel: ia berjalan pada banyak varian Unix, pada Mac, dan pada Windows 2000 dan yang lebih baru.
+apa c?  C ++ adalah bahasa pemrograman serba guna yang dikembangkan oleh Bjarne Stroustrup sebagai perpanjangan dari bahasa C, atau "C with Classes". Ini memiliki fitur pemrograman imperatif, berorientasi objek dan generik, sementara juga menyediakan fasilitas untuk manipulasi memori tingkat rendah. Ini hampir selalu diimplementasikan sebagai bahasa yang dikompilasi, dan banyak vendor menyediakan kompiler C++, termasuk Free Software Foundation, Microsoft, Intel, dan IBM, sehingga tersedia di banyak platform.
+apa java?  Java adalah bahasa pemrograman serbaguna yang berbasis kelas, berorientasi objek, dan secara khusus dirancang untuk memiliki dependensi implementasi sesedikit mungkin. Ini dimaksudkan agar pengembang aplikasi "menulis sekali, jalankan di mana saja" (WORA), yang berarti kode Java yang dikompilasi dapat berjalan di semua platform yang mendukung Java tanpa perlu melakukan kompilasi ulang. Aplikasi Java biasanya dikompilasi ke "bytecode" yang dapat berjalan pada Java virtual machine (JVM) apa pun arsitektur komputer yang mendasarinya. Sintaksis Java mirip dengan C dan C ++, tetapi memiliki lebih sedikit fasilitas tingkat rendah daripada keduanya. Pada 2018, Java menurut GitHub adalah salah satu bahasa pemrograman paling populer yang digunakan, khususnya untuk aplikasi web server-klien, dengan 9 juta pengembang yang dilaporkan.
+halo?  Haii!
+hai?  Haloo!
+kamu apa sih?  Halo, Aku Saia adalah chatbot sederhana yang dibuat oleh iwang-kikoy-billy untuk memenuhi tugas besar 3 strategi algoritma di Institut Teknologi Bandung.
+siapa nama presiden indonesia?  Joko Widodo
+siapa pasang calon no 1 milu 2019?  Jokowi-Amin
+siapa pasang calon no 2 milu 2019?  Prabowo-Sandi
+tempat nubes anak if?  dingdong
+apa beda snmptn jalur masuk lain?  Kalau di SNMPTN, dibutuhkan nilai rapor dan prestasi akademik yang bagus dan stabil supaya bisa lolos. Sementara untuk SBMPTN dan jalur mandiri, kamu harus ikut tes ujian masuknya. Jadi, SNMPTN ini merupakan jalur undangan, Quipperian. Hanya siswa-siswi beprestasilah yang bisa mendapatkan undangan SNMPTN.
+bagaimana tahap ikut snmptn 2019?  Secara garis besar, pertama kamu harus meminta kepala sekolah untuk melakukan Pengisian dan Verifikasi di PDSS (Pangkalan Data Sekolah dan Siswa). Kemudian kamu sistem LTMPT (Lembaga Tes Masuk Perguruan Tinggi) akan melakukan Pemeringkatan. Terakhir, kamu harus melakukan Pendaftaran di situs web resmi SNMPTN. Untuk lengkapnya, silakan cek di sini, ya.
+bagaimana cara lolos snmptn 2019?  Sama seperti SNMPTN yang lalu-lalu, seleksi ini akan melihat nilai rapor kamu dari semester satu kelas X hingga semester satu kelas XII, serta prestasi akademik lainnya. Untuk itu, cara agar kamu bisa lolos SNMPTN adalah dengan berprestasi sebaik mungkin dan mencetak prestasi seoptimal mungkin. Tetap pertahankan nilai dengan stabil, karena kalau naik turun justru akan menyulitkan kamu untuk lolos SNMPTN.
+apa syarat sekolah mau daftar snmptn?  Sekolah yang bisa mendaftar SNMPTN adalah SMA/SMK/MA/MAK negeri atau swasta, termasuk juga sekolah RI yang ada di luar negeri. Hal yang paling penting adalah sekolahmu harus punya NPSN (Nomor Pokok Sekolah Nasional), sudah mengisi PDSS, dan terdaftar sebagai peserta Ujian Nasional (UN) di tahun bersangkutan.
+berapa kuota terima snmptn 2019?  Nah, untuk tahun ini berbeda dengan tahun sebelumnya karena kuota SNMPTN 2019 dikurangi, Quipperian. Kemenristekdikti menetapkan pada SNMPTN 2019 kuota penerimaan mahasiswa diturunkan dari yang sebelumnya 30% jadi 20% saja. Soalnya, menurut Kemenristekdikti, peserta SNMPTN yang lolos kemarin enggak semuanya prestasi akademiknya saat di sekolah sama bagusnya saat di bangku kuliah. Itu artinya, proses penerimaan SNMPTN 2019 akan makin ketat!
+bagaimana beasiswa bidikmisi adik program afirmasi didik tinggi?  Bagi kamu yang berminat ikut beasiswa Bidikmisi dan ADIk, inilah syarat-syaratnya: Siswa yang mendaftar dan mengajukan bantuan biaya pendidikan Bidikmisi merupakan siswa yang berasal dari keluarga kurang mampu secara ekonomi. Calon peserta Bidikmisi atau ADIk dapat mempelajari prosedur pendaftaran melalui situs web resmi, yakni: http://bidikmisi.belmawa.ristekdikti.go.id, http://adik.ristekdikti.go.id
+bagaimana jumlah pilih ptn prodi?  Nah, dalam SNMPTN nanti, ada kuota yang terbatas dan pilihan PTN dan prodi kamu pun enggak bisa diubah-ubah. Berikut syarat dan ketentuannya: Siswa bisa memilih paling banyak 2 prodi dalam 1 PTN atau 2 PTN. Urutan pilihan PTN dan prodi menyatakan prioritas. Siswa SMK hanya boleh memilih prodi yang relevan, perhatikan syarat masing-masing PTN tujuan.
+terus kalau enggak terima snmptn gimana?  bagi yang ga keterima tenang aja, Kamu masih bisa mengikuti jalur SBMPTN (Seleksi Bersama Masuk Perguruan Tinggi Negeri) atau Jalur Mandiri yang disediakan masing-masing PTN. Rajinlah perkaya diri dengan materi dan latihan soal, jangan lupa juga daftar di Quipper Video biar belajarnya makin asyik.
+download mobile legends ya?  Kalian bisa mendownload Mobile Legends untuk Android di Appstore pada link ini. Untuk iOS, kalian bisa mendowloadnya disini. Atau, bisa dengan mengklik tombol biru dibawah.
+apakah spek hp standar baik main mobile legends?  Spesifikasi Smartphone yang disarankan untuk bermain Mobile Legends adalah sebagai berikut: RAM 3 GB, Memori Internal 16GB, Prosesor Quad Core, Jaringan 4G
+ukur mobile legends berapa mb?  Untuk ukuran download pertama kali, sekitar 100MB+. Sementara untuk instalasi penuh pada saat ini, sekitar 1,2 GB
+kenapa main mobile legends sering lag?  Coba lihat kualitas jaringan kalian di main menu, apakah warnanya hijau? Kalau warnanya oranye atau bahkan merah, berarti memang kualitas jaringannya sedang tidak baik. Jangan paksakan bermain Mobile Legends saat sedang lag, karena selain tidak nyaman bagi kalian sendiri akan merugikan tim yang lain juga.
+kenapa aplikasi mobile legends sering keluar sendiri?  Coba direstart dulu aplikasinya, jika masih mungkin ada masalah pada Smartphone kamu. Misalnya ada proses yang tidak berjalan dengan baik sehingga perlu direstart, atau baterainya sudah terlalu panas. Kemungkinan lainnya ada file instalasi yang corrupt, sehingga perlu instal ulang aplikasinya.
+saya sering temu player afk main apa harus laku?  Laporkan player tersebut bersama tim kamu dengan memilih 'Leaving the Game/AFK' pada opsi pelaporan, agar mengurangi kemungkinan bertemu player yang sama lagi dalam permainan berikutnya karena poin mereka berkurang. Hal yang sama juga dapat kalian lakukan untuk player yang kasar, gunakan opsi 'Using Profanity' bila pemain yang bersangkutan sudah kelewatan dalam percakapannya.
+mobile legends boros kuota sih?  Seperti layaknya game lain, Mobile Legends tidak memakan kuota banyak. Lain halnya bila sedang update patch baru, jadi pastikan client game kalian sudah diupdate bila ingin bermain dengan paket data biasa.
+kenapa mobile legends jadi lebih berat sekarang?  Mungkin pilihan untuk HD graphics dalam game kamu menyala, dan Smartphone kamu tidak kuat, coba matikan opsi tersebut dan kurangi kualitas grafiknya untuk jaga-jaga. Kalau masih terasa lebih berat, pastikan kapasitas memori kosong pada smartphone kamu masih mencukupi, jangan lupa kalau setiap update akan menambah ukuran dari game juga
