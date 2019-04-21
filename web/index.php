@@ -88,18 +88,9 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $user_id = $event['source']['userId'];
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
-                    //$result = $bot->replyText($event['replyToken'], $reply_text);
                     $result = $bot->replyMessage([
                         'replyToken' => $event['replyToken'],
-                        'messages' => [
-                                [
-                                    'type' => 'text',
-                                    'text' => $reply_text
-                                ],
-                                [
-                                    'type' => 'text',
-                                    'text' => "Nais"
-                                ],                 
+                        'messages' => [          
                                 [
                                     'type' => 'image',
                                     'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
