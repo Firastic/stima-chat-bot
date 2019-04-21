@@ -33,7 +33,22 @@ $app->get('/', function($req, $res)
   	echo "Welcome at Slim Framework";
     $array = [];
     $array = getDatabase($array);
-    print_r($array);
+    //print_r($array);
+    print_r([
+                                [
+                                    'type' => 'text',
+                                    'text' => "0000"
+                                ],
+                                [
+                                    'type' => 'text',
+                                    'text' => "Nais"
+                                ],                 
+                                [
+                                    'type' => 'image',
+                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
+                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
+                                ]
+                            ]);
 });
 
 $app->get('/playful', function($req, $res){
@@ -76,15 +91,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $result = $bot->replyText($event['replyToken'], $reply_text);
                     $bot->replyMessage([
                         'replyToken' => $event['replyToken'],
-                        'messages' => [
-                                [
-                                    'type' => 'text',
-                                    'text' => $reply_text
-                                ],
-                                [
-                                    'type' => 'text',
-                                    'text' => "Nais"
-                                ],                 
+                        'messages' => [                
                                 [
                                     'type' => 'image',
                                     'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
