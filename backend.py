@@ -196,16 +196,16 @@ if __name__ == "__main__":
         question = sys.argv[2]
         if(mode.lower() == 'bm'):
             for word in getSinonimKata(question):
-                if (searchWithBM(questionList,question) != None):
-                    print(searchWithBM(questionList,question))
+                if (searchWithBM(questionList,word) != None):
+                    print(searchWithBM(questionList,word)[1])
                     break
         elif(mode.lower() == 'kmp'):
             for word in getSinonimKata(question):
-                if (searchWithKMP(questionList,question) != None):
-                    print(searchWithKMP(questionList,question))
+                if (searchWithKMP(questionList,word) != None):
+                    print(searchWithKMP(questionList,word)[1])
                     break
         elif(mode.lower() == 'regex'):
             for word in getSinonimKata(question):
-                if (searchWithRegEx(questionList,question) != None):
-                    print(searchWithRegEx(questionList,question))
+                if (searchWithRegEx(questionList,word) != None):
+                    print(searchWithRegEx(questionList,word)[1])
                     break
