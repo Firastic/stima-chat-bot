@@ -91,7 +91,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $reply_text = processMessage($message, $user_id);
                     $replyMessage = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
                     $replyMessage.add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply_text));
-                    $replyMessage.add(new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://stima-chat-bot.herokuapp.com/assets/playful.jpeg', 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'));
+                    //$replyMessage.add(new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://stima-chat-bot.herokuapp.com/assets/playful.jpeg', 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'));
                     $result = $bot->replyMessage($event['replyToken'], $replyMessage);
                 }
             }
