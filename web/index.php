@@ -36,6 +36,10 @@ $app->get('/', function($req, $res)
     print_r($array);
 });
 
+$app->get('/playful', function($req, $res){
+    echo '<img src="assets/playful.jpeg">';
+});
+
 $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $channel_secret)
 {
     // get request body and line signature header
@@ -79,8 +83,8 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                                 ],
                                 [
                                     'type' => 'image',
-                                    'originalContentUrl' => 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.icons8.com%2Fmaterial%2F4ac144%2F256%2Fcamera.png&imgrefurl=https%3A%2F%2Ficons8.com%2F&docid=BZe7cobpJroftM&tbnid=ncTepu3fUYv-NM%3A&vet=10ahUKEwjozJrSv-HhAhWGpo8KHTbrBOkQMwjGAShPME8..i&w=256&h=256&safe=strict&bih=617&biw=1280&q=icon&ved=0ahUKEwjozJrSv-HhAhWGpo8KHTbrBOkQMwjGAShPME8&iact=mrc&uact=8',
-                                    'previewImageUrl' => 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.icons8.com%2Fmaterial%2F4ac144%2F256%2Fcamera.png&imgrefurl=https%3A%2F%2Ficons8.com%2F&docid=BZe7cobpJroftM&tbnid=ncTepu3fUYv-NM%3A&vet=10ahUKEwjozJrSv-HhAhWGpo8KHTbrBOkQMwjGAShPME8..i&w=256&h=256&safe=strict&bih=617&biw=1280&q=icon&ved=0ahUKEwjozJrSv-HhAhWGpo8KHTbrBOkQMwjGAShPME8&iact=mrc&uact=8'
+                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful',
+                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful'
                                 ]
                             ]
                         ]);
