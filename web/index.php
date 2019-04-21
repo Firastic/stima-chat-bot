@@ -39,9 +39,9 @@ $app->get('/', function($req, $res)
     //foreach($output as $x){
     //    echo $x;
     //}
-    $str = 'cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"';
+    $str = 'python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"';
     echo $str;
-    exec('cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"2>&1', $output);
+    exec('python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"', $output);
     var_dump($output);
 });
 
@@ -104,7 +104,6 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 
 function processMessage($message, $user_id) {
     $arr = [];
-    //$arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
     $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
     exec('cd .. && python backend.py bm "' . $message . '"2>&1', $output);
     if($output[0] !== "None"){
