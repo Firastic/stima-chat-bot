@@ -105,7 +105,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 function processMessage($message, $user_id) {
     $arr = [];
     $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
-    exec('cd .. && python backend.py bm "' . $message . '"2>&1', $output);
+    exec('cd .. && python backend.py bm "' . $message . '"', $output);
     if($output[0] !== "None"){
         $reply_text = $output[0];
     } 
@@ -127,7 +127,9 @@ function getDatabase($array){
         //print_r($pair);
         $pair = str_replace("'", "", $pair);
         $temp = explode(',', $pair);
-        $temp[1] = substr($temp[1], 1);
+        while($temp[1][0] == ' '){
+            $temp[1] = substr($temp[1], 1);    
+        }
         //print_r($temp);
         array_push($array, array("question" => $temp[0], "answer" => $temp[1]));
     }
