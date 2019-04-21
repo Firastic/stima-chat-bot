@@ -28,6 +28,8 @@ $configs =  [
 ];
 $app = new Slim\App($configs);
  
+
+$GLOBALS["mode"] = 0;
 // buat route untuk url homepage
 $app->get('/', function($req, $res)
 {
@@ -105,11 +107,26 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 function processMessage($message, $user_id) {
     $arr = [];
     $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
-    exec('cd .. && python backend.py bm "' . $message . '"', $output);
-    if($output[0] !== "None"){
-        $reply_text = $output[0];
-        $reply_text = ltrim($reply_text);
-    } 
+    $modeStr = "kmp";
+    if($GLOBALS["mode"] == 0)$modeStr = "kmp";
+    else if($GLOBALS["mode"] == 1)$modeStr = "bm";
+    else if($GLOBALS["mode"] == 2)$modeStr = "regex";
+    if($message.lower() == "kmp"){
+        $GLOBALS["mode"] = 0;
+        $reply_text = "Okok aku ganti jadi KMP"
+    } else if($message.lower() == "bm"){
+        $GLOBALS["mode"] = 1;
+        $reply_text = "Okok aku ganti jadi Boyer-Moore"
+    } else if($message.lower() == "regex"){
+        $GLOBALS["mode"] = 2;
+        $reply_text = "Okok aku ganti jadi Regex"
+    } else {
+        exec('cd .. && python backend.py ' + $modeStr + ' "' . $message . '"', $output);
+        if($output[0] !== "None"){
+            $reply_text = $output[0];
+            $reply_text = ltrim($reply_text);
+        } 
+    }
     return $reply_text;
 }
 
