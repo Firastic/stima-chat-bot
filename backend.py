@@ -203,7 +203,6 @@ if __name__ == "__main__":
         question = sys.argv[2]
         temp = getSinonimKata(question)
         if(mode.lower() == 'bm'):
-<<<<<<< Updated upstream
             for word in temp:
                 if (searchWithBM(questionList,word) != None):
                     print(searchWithBM(questionList,word)[1])
@@ -223,19 +222,3 @@ if __name__ == "__main__":
         for i in range(0,len(questionList)):
             questionList[i][0] = stemmer.stem(stopword.remove(questionList[i][0]))
         database.writeFile(questionList, 'modifiedQuestion.txt')
-=======
-            for word in getSinonimKata(question):
-                if (searchWithBM(questionList,word) != None):
-                    print(searchWithBM(questionList,word))
-                    break
-        elif(mode.lower() == 'kmp'):
-            for word in getSinonimKata(question):
-                if (searchWithKMP(questionList,word) != None):
-                    print(searchWithKMP(questionList,word))
-                    break
-        elif(mode.lower() == 'regex'):
-            for word in getSinonimKata(question):
-                if (searchWithRegEx(questionList,word) != None):
-                    print(searchWithRegEx(questionList,word))
-                    break
->>>>>>> Stashed changes
