@@ -43,17 +43,6 @@ $app->get('/', function($req, $res)
     echo $str;
     exec('cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"2>&1', $output);
     var_dump($output);
-    foreach($output as $x){
-        echo $x;
-    }
-    if($output[0] !== "None\n"){
-        $reply_text = $output[0];
-    }
-    echo($output);
-});
-
-$app->get('/playful', function($req, $res){
-    echo '<img src="assets/playful.jpeg">';
 });
 
 $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $channel_secret)
@@ -117,16 +106,10 @@ function processMessage($message, $user_id) {
     $arr = [];
     //$arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
     $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
-    if (strpos($message,"!hi") !== false) {
-
-        $reply_text = "Hello!";
-    } else {
-        exec('cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"2>&1', $output);
-        exec('cd .. && python backend.py bm "' . $message . '"2>&1', $output);
-        if($output[0] !== "None"){
-            $reply_text = $output[0];
-        }
-    }   
+    exec('cd .. && python backend.py bm "' . $message . '"2>&1', $output);
+    if($output[0] !== "None"){
+        $reply_text = $output[0];
+    } 
     return $reply_text;
 }
 
