@@ -82,6 +82,10 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                                     'text' => $reply_text
                                 ],
                                 [
+                                    'type' => 'text',
+                                    'text' => "Nais"
+                                ],                 
+                                [
                                     'type' => 'image',
                                     'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
                                     'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
