@@ -39,9 +39,9 @@ $app->get('/', function($req, $res)
     //foreach($output as $x){
     //    echo $x;
     //}
-    $str = 'python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"';
+    $str = 'cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"';
     echo $str;
-    exec('python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"', $output);
+    exec('cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"', $output);
     var_dump($output);
 });
 
