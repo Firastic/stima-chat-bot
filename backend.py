@@ -24,6 +24,8 @@ def KMP(S1,S2):
     j = 0
     k = 0
     arrKecocokan = [0]
+    if(n < m):
+        return 0
     while(i<n):
         if(S2[j] == S1[i]):
             i+=1
@@ -38,7 +40,7 @@ def KMP(S1,S2):
             k = 0
         else:
             i+=1 
-    return max(arrKecocokan)/(m)
+    return max(arrKecocokan)/(n)
 def computeFail(S2):
     fail = []
     m = len(S2)
@@ -85,7 +87,7 @@ def BM(S1,S2):
         if(i>n-1):
             break
     nilaimax = max(listkesamaan)
-    return nilaimax/m
+    return nilaimax/n
 def buildLast(S2):
     last = []
     for i in range(0,128):
@@ -129,12 +131,28 @@ def searchWithBM(QnA,sentence):
             return QnA[i][1]
 def searchWithKMP(QnA,sentence):
     kecocokan = 0
+    listQnA = []
     for i in range(0,len(QnA)):
         pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
         sentencebaru = stemmer.stem(stopword.remove(sentence))
         kecocokan = KMP(pertanyaan,sentencebaru)
         if(kecocokan == 1):
+            listQnA.append([kecocokan,QnA[i]])
             return QnA[i][1]
+        elif kecocokan >= 0.9:
+            listQnA.append([kecocokan,QnA[i]])
+    #nggak tau ini bisa atau nggak
+    if(len(listQnA) == 0):
+        for i in range(0,len(QnA)):
+            pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
+            sentencebaru = stemmer.stem(stopword.remove(sentence))
+            kecocokan = KMP(pertanyaan,sentencebaru)
+        if(kecocokan != 0):
+            listQnA.append([kecocokan,QnA[i]])
+    kecocokanterbesar = max(listQnA)
+    return kecocokanterbesar[1][1]
+                
+
 
 def searchWithRegEx(QnA,sentence):
     kecocokan = 0
@@ -144,4 +162,6 @@ def searchWithRegEx(QnA,sentence):
         kecocokan = regex(pertanyaan,sentencebaru)
         if(kecocokan):
             return QnA[i][1]
+        else:
+            return None
 
