@@ -69,8 +69,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $user_id = $event['source']['userId'];
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
-                    $result = $bot->replyText($event['replyToken'], $reply_text);
-                    $bot->replyMessage([
+                    $result = $bot->replyMessage([
                         'replyToken' => $event['replyToken'],
                         'messages' => [
                                 [
