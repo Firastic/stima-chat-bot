@@ -83,8 +83,8 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                                 ],
                                 [
                                     'type' => 'image',
-                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/playful',
-                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/playful'
+                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
+                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
                                 ]
                             ]
                         ]);
