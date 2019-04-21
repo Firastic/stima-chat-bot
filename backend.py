@@ -117,6 +117,7 @@ def regex(S1,S2):
                 return False
     return True
 # Akan mengembalikan list yang berisi % kecocokan dan list QnA
+
 def searchWithBM(QnA,sentence):
     kecocokan = 0
     listQnA = []
@@ -175,8 +176,7 @@ def searchWithRegEx(QnA,sentence):
         kecocokan = regex(pertanyaan,sentencebaru)
         if(kecocokan):
             return QnA[i][1]
-        else:
-            return None
+    return None
 # agar sinonim tidak menggunakan memmory yang berlebih hasil sinonim di generate dengan yield
 def getSinonimKata(pertanyaan):
     global tempDict
@@ -193,6 +193,7 @@ def getSinonimKata(pertanyaan):
 
 
 if __name__ == "__main__":
+
     if(len(sys.argv) == 3):
         mode = sys.argv[1]
         questionList = database.readFile('modifiedQuestion.txt')
@@ -202,6 +203,7 @@ if __name__ == "__main__":
         question = sys.argv[2]
         temp = getSinonimKata(question)
         if(mode.lower() == 'bm'):
+<<<<<<< Updated upstream
             for word in temp:
                 if (searchWithBM(questionList,word) != None):
                     print(searchWithBM(questionList,word)[1])
@@ -221,3 +223,19 @@ if __name__ == "__main__":
         for i in range(0,len(questionList)):
             questionList[i][0] = stemmer.stem(stopword.remove(questionList[i][0]))
         database.writeFile(questionList, 'modifiedQuestion.txt')
+=======
+            for word in getSinonimKata(question):
+                if (searchWithBM(questionList,word) != None):
+                    print(searchWithBM(questionList,word))
+                    break
+        elif(mode.lower() == 'kmp'):
+            for word in getSinonimKata(question):
+                if (searchWithKMP(questionList,word) != None):
+                    print(searchWithKMP(questionList,word))
+                    break
+        elif(mode.lower() == 'regex'):
+            for word in getSinonimKata(question):
+                if (searchWithRegEx(questionList,word) != None):
+                    print(searchWithRegEx(questionList,word))
+                    break
+>>>>>>> Stashed changes
