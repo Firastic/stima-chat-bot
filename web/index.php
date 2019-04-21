@@ -92,7 +92,17 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $replyMessage = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
                     $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply_text);
                     $replyMessage->add($textMessageBuilder);
-                    $imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://stima-chat-bot.herokuapp.com/assets/playful.jpeg', 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg');
+                    $emotion = "playful.jpeg";
+                    if(strpos($reply_text, "ehe") !== false){
+                        $emotion = "confused.jpeg";
+                    } else if(strpos($message, "Siapa") !== false){
+                        $emotion = "happy.jpeg";
+                    } else if(strpos($message, "iwang") !== false){
+                        $emotion = "confused.jpeg";
+                    } else if(strpos($message, "apa") !== false){
+                        $emotion = "proud.jpeg";
+                    }
+                    $imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://stima-chat-bot.herokuapp.com/assets/' . $emotion, 'https://stima-chat-bot.herokuapp.com/assets/' . $emotion);
                     $replyMessage->add($imageMessageBuilder);
                     $result = $bot->replyMessage($event['replyToken'], $replyMessage);
                 }
@@ -107,7 +117,7 @@ function processMessage($message, $user_id) {
     $arr = [];
     $arr = getDatabase($arr);
     //$arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
-    $reply_text = "Maaf, masukan tidak dikenali. Masukan input sesuai format";
+    $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
     if (strpos($message,"!hi") !== false) {
 
         $reply_text = "Hello!";
