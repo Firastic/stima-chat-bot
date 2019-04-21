@@ -1,5 +1,4 @@
 import json
-
 def readFile(filename):
     content = []
     file = open(filename,"r")
@@ -7,7 +6,8 @@ def readFile(filename):
     db = []
     for i in range(len(content)):
         db.append([])
-        db[i] = content[i].split("?")
+        db[i] = content[i].split("?",1)
+        db[i][0] += '?'
     return db
 
 def load(filename):	
@@ -16,16 +16,12 @@ def load(filename):
 
     return data
 
-mydict = load("kamus.json")
+mydict = load("dict.json")
 
 def getSinonim(word):
+    jawaban = [word]
     if word in mydict.keys():
-        return mydict[word]['sinonim']
+        jawaban.extend(mydict[word]['sinonim'])
+        return jawaban
     else:
-        return []
-
-
-QnA = readFile("pertanyaan.txt")
-print(QnA)
-
-print(getSinonim('pemenang'))
+        return jawaban

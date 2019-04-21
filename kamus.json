@@ -13,7 +13,8 @@
             "kawula", 
             "kita ", 
             "patik", 
-            "p ya"
+            "p ya",
+            "saya"
         ]
     }, 
     "aku": {
@@ -35,7 +36,8 @@
             "patik", 
             "sanda", 
             "saya", 
-            "sini"
+            "sini",
+            "aku"
         ]
     },
     "memperdayai": {
@@ -73,7 +75,8 @@
             "menyesatkan", 
             "menyikut", 
             "menyilap", 
-            "merakut"
+            "merakut",
+            "memperdayai"
         ]
     },
     "membuat": {
@@ -83,13 +86,15 @@
             "melaksanakan", 
             "melakukan", 
             "melancarkan", 
-            "melangsung"
+            "melangsung",
+            "membuat"
         ]
     }, 
     "siapa": {
         "tag": "pron", 
         "sinonim": [
-            "sapa"
+            "sapa",
+            "siapa"
         ]
     }, 
     "sebutan": {
@@ -104,6 +109,7 @@
             "predikat", 
             "titel", 
             "istilah"
+            ,"sebutan"
         ]
     }, 
     "keunggulan": {
@@ -120,6 +126,7 @@
             "reputasi", 
             "superioritas", 
             "supremasi"
+            ,"keunggulan"
         ]
     }, 
     "mengapa": {
@@ -129,13 +136,15 @@
             "apa sebab", 
             "kenapa", 
             "kok"
+            ,"mengapa"
         ]
     }, 
     "kenapa": {
         "tag": "pron", 
         "sinonim": [
             "cak kok", 
-            "mengapa"
+            "mengapa",
+            "kenapa"
         ]
     }, 
     "bagaimana": {
@@ -144,7 +153,8 @@
             "betapa", 
             "dengan cara apa", 
             "dengan jalan apa", 
-            "macam mana"
+            "macam mana",
+            "bagaimana"
         ]
     }, 
     "bila": {
@@ -163,14 +173,16 @@
             "manakala", 
             "masa", 
             "misalnya", 
-            "pada"
+            "pada",
+            "bila"
         ]
     },
     "tahun": {
         "tag": "n", 
         "sinonim": [
             "tarikh", 
-            "warsa"
+            "warsa",
+            "tahun"
         ]
     }, 
     "ulang tahun": {
@@ -178,7 +190,8 @@
         "sinonim": [
             "dies natalis", 
             "hari jadi", 
-            "hari lahir"
+            "hari lahir",
+            "ulang tahun"
         ]
     }, 
     "manifesto": {
@@ -190,7 +203,8 @@
             "pengumuman", 
             "pernyataan", 
             "proklamasi", 
-            "wara-wara"
+            "wara-wara",
+            "manifesto"
         ]
     }, 
     "notifikasi": {
@@ -204,7 +218,8 @@
             "pengumuman", 
             "peringatan", 
             "proklamasi", 
-            "publikasi"
+            "publikasi",
+            "notifikasi"
         ]
     }, 
     "publikasi": {
@@ -215,7 +230,8 @@
             "permakluman", 
             "pengumuman", 
             "proklamasi", 
-            "siaran"
+            "siaran",
+            "publikasi"
         ]
     }, 
     "pengesahan": {
@@ -262,7 +278,8 @@
             "persetujuan", 
             "proklamasi", 
             "ratifikasi", 
-            "testimoni"
+            "testimoni",
+            "pengesahan"
         ]
     }, 
     "proklamasi": {
@@ -279,7 +296,8 @@
             "pernyataan", 
             "persiaran", 
             "publikasi", 
-            "wara-wara"
+            "wara-wara",
+            "proklamasi"
         ]
     }, 
     "deklarasi": {
@@ -293,7 +311,8 @@
             "pernyataan", 
             "persiaran", 
             "proklamasi", 
-            "wara-wara"
+            "wara-wara",
+            "deklarasi"
         ]
     }, 
     "engkau": {
@@ -313,7 +332,8 @@
             "saudara", 
             "sira", 
             "situ", 
-            "tuan"
+            "tuan",
+            "engkau"
         ]
     }, 
     "kok": {
@@ -337,7 +357,8 @@
             "kali", 
             "kelihatannya", 
             "kira-kira", 
-            "mana"
+            "mana",
+            "kok"
         ]
     }, 
     "maksimal": {
@@ -349,7 +370,8 @@
             "sebanyak-banyaknya", 
             "setinggi-tingginya", 
             "suntuk", 
-            "tertinggi"
+            "tertinggi",
+            "maksimal"
         ]
     },
     "minimum": {
@@ -357,7 +379,8 @@
         "sinonim": [
             "minimal", 
             "paling kecil", 
-            "paling"
+            "paling",
+            "minimum"
         ]
     },
     "mendapat": {
@@ -385,7 +408,8 @@
             "merebut", 
             "mewarisi", 
             "terkena", 
-            "terserang (penyakit)"
+            "terserang (penyakit)",
+            "mendapat"
         ]
     }, 
     "minimal": {
@@ -394,7 +418,8 @@
             "minimum", 
             "paling tidak", 
             "sedikitnya", 
-            "sekurang-kurangnya"
+            "sekurang-kurangnya",
+            "minimal"
         ]
     },
     "ketua": {
@@ -416,7 +441,8 @@
             "pasak negeri", 
             "pengetua", 
             "sesepuh", 
-            "tetua"
+            "tetua",
+            "ketua"
         ]
     }, 
     "pemenang": {
@@ -427,7 +453,8 @@
             "jawara", 
             "juara", 
             "kampiun", 
-            "pemimpin"
+            "pemimpin",
+            "pemenang"
         ]
     }, 
     "koordinator": {
@@ -435,7 +462,8 @@
         "sinonim": [
             "ketua", 
             "organisator", 
-            "pemimpin"
+            "pemimpin",
+            "koordinator"
         ]
     } 
 }
