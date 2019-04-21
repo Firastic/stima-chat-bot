@@ -108,6 +108,7 @@ function processMessage($message, $user_id) {
     exec('cd .. && python backend.py bm "' . $message . '"', $output);
     if($output[0] !== "None"){
         $reply_text = $output[0];
+        $reply_text = ltrim($reply_text);
     } 
     return $reply_text;
 }
