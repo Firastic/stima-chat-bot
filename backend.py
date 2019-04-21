@@ -194,18 +194,19 @@ if __name__ == "__main__":
         mode = sys.argv[1]
         questionList = database.readFile('pertanyaan.txt')
         question = sys.argv[2]
+        temp = getSinonimKata(question)
         if(mode.lower() == 'bm'):
-            for word in getSinonimKata(question):
+            for word in temp:
                 if (searchWithBM(questionList,word) != None):
                     print(searchWithBM(questionList,word)[1])
                     break
         elif(mode.lower() == 'kmp'):
-            for word in getSinonimKata(question):
+            for word in temp:
                 if (searchWithKMP(questionList,word) != None):
                     print(searchWithKMP(questionList,word)[1])
                     break
         elif(mode.lower() == 'regex'):
-            for word in getSinonimKata(question):
+            for word in temp:
                 if (searchWithRegEx(questionList,word) != None):
                     print(searchWithRegEx(questionList,word)[1])
                     break
