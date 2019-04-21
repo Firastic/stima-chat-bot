@@ -79,6 +79,15 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                                 ]
                             ]
                         ]);
+                    $bot->replyMessage([
+                        'replyToken' => $event['replyToken'],
+                        'messages' => [
+                                [
+                                    'type' => 'text',
+                                    'originalContentUrl' => 'ehe'
+                                ]
+                            ]
+                        ]);
                 }
             
             }
