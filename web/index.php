@@ -90,9 +90,10 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
                     $replyMessage = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
-                    $replyMessage.add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply_text));
+                    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply_text);
+                    //$replyMessage.add();
                     //$replyMessage.add(new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://stima-chat-bot.herokuapp.com/assets/playful.jpeg', 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'));
-                    $result = $bot->replyMessage($event['replyToken'], new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply_text));
+                    $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
                 }
             }
         }
