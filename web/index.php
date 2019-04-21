@@ -69,7 +69,8 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $user_id = $event['source']['userId'];
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
-                    $result = $bot->replyMessage([
+                    $result = $bot->replyText($event['replyToken'], $reply_text);
+                    $bot->replyMessage([
                         'replyToken' => $event['replyToken'],
                         'messages' => [
                                 [
@@ -78,7 +79,8 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                                 ],
                                 [
                                     'type' => 'image',
-                                    'originalContentUrl' => '../assets/playful.jpeg'
+                                    'originalContentUrl' => '../assets/playful.jpeg',
+                                    'previewImageUrl' => '../assets/playful.jpeg'
                                 ]
                             ]
                         ]);
