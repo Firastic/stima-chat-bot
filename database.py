@@ -25,3 +25,7 @@ def getSinonim(word):
         return jawaban
     else:
         return jawaban
+
+if __name__ == '__main__':
+    #print(1)
+    print(readFile('pertanyaan.txt'))

@@ -31,25 +31,25 @@ $app = new Slim\App($configs);
 // buat route untuk url homepage
 $app->get('/', function($req, $res)
 {
-  	echo "Welcome at Slim Framework";
-    $array = [];
-    $array = getDatabase($array);
+  	//echo "Welcome at Slim Framework";
+    #$array = [];
+    #$array = getDatabase($array);
     //print_r($array);
-    print_r([
-                                [
-                                    'type' => 'text',
-                                    'text' => "0000"
-                                ],
-                                [
-                                    'type' => 'text',
-                                    'text' => "Nais"
-                                ],                 
-                                [
-                                    'type' => 'image',
-                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
-                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
-                                ]
-                            ]);
+    //exec('cd .. && ls', $output);
+    //foreach($output as $x){
+    //    echo $x;
+    //}
+    $str = 'cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"';
+    echo $str;
+    exec('cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"2>&1', $output);
+    var_dump($output);
+    foreach($output as $x){
+        echo $x;
+    }
+    if($output[0] !== "None\n"){
+        $reply_text = $output[0];
+    }
+    echo($output);
 });
 
 $app->get('/playful', function($req, $res){
@@ -115,17 +115,16 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 
 function processMessage($message, $user_id) {
     $arr = [];
-    $arr = getDatabase($arr);
     //$arr = array(array("question" => "Siapa kamu?", "answer" => "Perkenalkan, saya Saia!"));
     $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
     if (strpos($message,"!hi") !== false) {
 
         $reply_text = "Hello!";
     } else {
-        foreach($arr as $qa){
-            if(strpos($message,$qa["question"]) !== false){
-                $reply_text = $qa["answer"];
-            }
+        exec('cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"2>&1', $output);
+        exec('cd .. && python backend.py bm "' . $message . '"2>&1', $output);
+        if($output[0] !== "None"){
+            $reply_text = $output[0];
         }
     }   
     return $reply_text;
@@ -155,15 +154,4 @@ function getDatabase($array){
     return $array;
 }
 
-$app->run();
-
-/*,
-                                [
-                                    'type' => 'text',
-                                    'text' => "Nais"
-                                ],                 
-                                [
-                                    'type' => 'image',
-                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
-                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
-                                ]*/
+$app->run();    
