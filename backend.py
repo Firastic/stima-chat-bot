@@ -119,20 +119,20 @@ def regex(S1,S2):
 def searchWithBM(QnA,sentence):
     kecocokan = 0
     listQnA = []
-    sentencebaru = stemmer.stem(stopword.remove(sentence))    
+    sentencebaru = stemmer.stem(stopword.remove(sentence))
     for i in range(0,len(QnA)):
         pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
         kecocokan = BM(pertanyaan,sentencebaru)
         if(kecocokan == 1):
-            return [kecocokan,QnA[i][1]][1]
+            return [kecocokan,QnA[i]][1]
         elif kecocokan >= 0.9:
-            listQnA.append([kecocokan,QnA[i][1]])
+            listQnA.append([kecocokan,QnA[i]])
     #nggak tau ini bisa atau nggak
     if(len(listQnA) == 0):
         for i in range(0,len(QnA)):
             pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
             kecocokan = BM(pertanyaan,sentencebaru)
-            if(kecocokan > 0.5):
+            if(kecocokan >0.5):
                 listQnA.append([kecocokan,QnA[i]])
     listQnA.sort(reverse = True)
     if(len(listQnA) == 0):
@@ -148,17 +148,17 @@ def searchWithKMP(QnA,sentence):
         pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
         kecocokan = KMP(pertanyaan,sentencebaru)
         if(kecocokan == 1):
-            listQnA.append([kecocokan,QnA[i][1]])
+            listQnA.append([kecocokan,QnA[i]])
             return listQnA[0][1]
         elif kecocokan >= 0.9:
-            listQnA.append([kecocokan,QnA[i][1]])
+            listQnA.append([kecocokan,QnA[i]])
     #nggak tau ini bisa atau nggak
     if(len(listQnA) == 0):
         for i in range(0,len(QnA)):
             pertanyaan = stemmer.stem(stopword.remove(QnA[i][0]))
             kecocokan = KMP(pertanyaan,sentencebaru)
             if(kecocokan > 0.5):
-                listQnA.append([kecocokan,QnA[i][1]])
+                listQnA.append([kecocokan,QnA[i]])
     listQnA.sort(reverse = True)
     if(len(listQnA) == 0):
         return None
@@ -176,29 +176,36 @@ def searchWithRegEx(QnA,sentence):
             return QnA[i][1]
         else:
             return None
+# agar sinonim tidak menggunakan memmory yang berlebih hasil sinonim di generate dengan yield
 def getSinonimKata(pertanyaan):
     listkata = pertanyaan.split()
     listsinonim = []
-    listkalimat = []
     for kata in listkata:
         listsinonim.append(database.getSinonim(kata))
     listkata = []
     for element in itertools.product(*listsinonim):
         listkata.append(element)
     for element in listkata:
-        listkalimat.append(" ".join(element))
-    yield listkalimat
+        yield (" ".join(element))
+
 
 if __name__ == "__main__":
-    #for val in getSinonimKata("Siapa nama koordinator dosen mata kuliah strategi algoritma 2018/2019"):
     if(len(sys.argv) == 3):
         mode = sys.argv[1]
         questionList = database.readFile('pertanyaan.txt')
         question = sys.argv[2]
         if(mode.lower() == 'bm'):
-            print(searchWithBM(questionList,question))
+            for word in getSinonimKata(question):
+                if (searchWithBM(questionList,question) != None):
+                    print(searchWithBM(questionList,question))
+                    break
         elif(mode.lower() == 'kmp'):
-            print(searchWithKMP(questionList,question))
+            for word in getSinonimKata(question):
+                if (searchWithKMP(questionList,question) != None):
+                    print(searchWithKMP(questionList,question))
+                    break
         elif(mode.lower() == 'regex'):
-            print(searchWithRegEx(questionList,question))
-        
+            for word in getSinonimKata(question):
+                if (searchWithRegEx(questionList,question) != None):
+                    print(searchWithRegEx(questionList,question))
+                    break
