@@ -88,15 +88,12 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $user_id = $event['source']['userId'];
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
-                    $result = $bot->replyMessage([
-                        'replyToken' => $event['replyToken'],
-                        'messages' => [
-                                [
-                                    'type' => 'text',
-                                    'text' => $reply_text
-                                ]
-                            ]
-                        ]);
+                    $result = $bot->replyMessage($event['replyToken'], [
+                                    [
+                                        'type' => 'text',
+                                        'text' => $reply_text
+                                    ]
+                                ]);
                 }
             }
         }
@@ -148,3 +145,14 @@ function getDatabase($array){
 }
 
 $app->run();
+
+/*,
+                                [
+                                    'type' => 'text',
+                                    'text' => "Nais"
+                                ],                 
+                                [
+                                    'type' => 'image',
+                                    'originalContentUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg',
+                                    'previewImageUrl' => 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'
+                                ]*/
