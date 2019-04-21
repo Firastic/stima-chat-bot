@@ -5,6 +5,7 @@ use \LINE\LINEBot;
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 use \LINE\LINEBot\SignatureValidator as SignatureValidator;
  
@@ -88,12 +89,10 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $user_id = $event['source']['userId'];
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
-                    $result = $bot->replyMessage($event['replyToken'], [
-                                    [
-                                        'type' => 'text',
-                                        'text' => $reply_text
-                                    ]
-                                ]);
+                    $replyMessage = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+                    $replyMessage.add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply_text));
+                    $replyMessage.add(new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://stima-chat-bot.herokuapp.com/assets/playful.jpeg', 'https://stima-chat-bot.herokuapp.com/assets/playful.jpeg'));
+                    $result = $bot->replyMessage($event['replyToken'], $replyMessage);
                 }
             }
         }
