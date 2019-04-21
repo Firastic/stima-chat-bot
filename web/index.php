@@ -70,6 +70,15 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                     $message = $event['message']['text'];
                     $reply_text = processMessage($message, $user_id);
                     $result = $bot->replyText($event['replyToken'], $reply_text);
+                    $bot->replyMessage([
+                        'replyToken' => $event['replyToken'],
+                        'messages' => [
+                                [
+                                    'type' => 'image',
+                                    'originalContentUrl' => '../assets/playful.jpeg'
+                                ]
+                            ]
+                        ]);
                 }
             
             }
