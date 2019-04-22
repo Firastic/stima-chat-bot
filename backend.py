@@ -137,7 +137,6 @@ def searchWithBM(QnA,sentence):
             kecocokan = BM(pertanyaan,sentencebaru)
             if(kecocokan >0.5):
                 listQnA.append([kecocokan,QnA[i]])
-    #listQnA.sort(reverse = True)
     if(len(listQnA) == 0):
         return None
     else:
@@ -198,9 +197,6 @@ if __name__ == "__main__":
     if(len(sys.argv) == 3):
         mode = sys.argv[1]
         questionList = database.readFile('modifiedQuestion.txt')
-        #for i in range(0,len(questionList)):
-        #    questionList[i][0] = stemmer.stem(stopword.remove(questionList[i][0]))
-        #database.writeFile(questionList, 'test.txt')
         question = sys.argv[2]
         temp = getSinonimKata(question)
         if(mode.lower() == 'bm'):

@@ -1,4 +1,6 @@
 import json
+
+#Membaca file qna
 def readFile(filename):
     content = []
     file = open(filename,"r")
@@ -9,22 +11,21 @@ def readFile(filename):
         db[i] = content[i].split("?",1)
         db[i][0] += '?'
     return db
-
+#Menulis file qna
 def writeFile(input, filename):
     content = []
     file = open(filename,"w+")
     for question, answer in input:
         file.write(question + '? ' + answer)
     file.close()
-
+#Meload file
 def load(filename):	
     with open(filename) as data_file:
         data = json.load(data_file)	
 
     return data
 
-#mydict = load("dict.json")
-
+#Mengembalikan seluruh sinonim dari word
 def getSinonim(mydict, word):
     jawaban = [word]
     if word in mydict.keys():
@@ -34,5 +35,4 @@ def getSinonim(mydict, word):
         return jawaban
 
 if __name__ == '__main__':
-    #print(1)
     print(readFile('pertanyaan.txt'))

@@ -35,14 +35,6 @@ $GLOBALS["mode"] = 0;
  */
 $app->get('/', function($req, $res)
 {
-  	//echo "Welcome at Slim Framework";
-    #$array = [];
-    #$array = getDatabase($array);
-    //print_r($array);
-    //exec('cd .. && ls', $output);
-    //foreach($output as $x){
-    //    echo $x;
-    //}
     $str = 'cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"';
     echo $str;
     exec('cd .. && python backend.py bm "milu ada berapa kali tahun"', $output);
@@ -63,7 +55,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
     if($pass_signature === false)
     {
         // is LINE_SIGNATURE exists in request header?
-        if(empty($signature)){
+        if(empty($signature)){  
             return $response->withStatus(400, 'Signature not set');
         }
  
@@ -139,7 +131,6 @@ function processMessage($message, $user_id) {
 
 /**
  * Mengambil isi dari database
- * @param  Array of qna $array Isi dari database
  * @return Array of qna        Isi dari database
  */
 function getDatabase(){
@@ -150,20 +141,14 @@ function getDatabase(){
     $output[0] = str_replace("\\n", "", $output[0]);
     $output[0] = str_replace("\\r", "", $output[0]);
     $array = [];
-    //print_r($output[0]);
     $convertedArray = explode(']', $output[0]);
-    //print_r($convertedArray);
     foreach($convertedArray as $pair){
         if($pair == NULL)break; 
-        //print_r($pair);
         $pair = str_replace("'", "", $pair);
         $temp = explode(',', $pair);
         $temp[1] = ltrim($temp[1]);
-        //print_r($temp);
         array_push($array, array("question" => $temp[0], "answer" => $temp[1]));
     }
-    //print_r($convertedArray[0]);
-    //print_r($array[0]);
     return $array;
 }
 
