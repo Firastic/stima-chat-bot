@@ -30,7 +30,9 @@ $app = new Slim\App($configs);
  
 
 $GLOBALS["mode"] = 0;
-// buat route untuk url homepage
+/**
+ * Route untuk homepage sebagai interface testing
+ */
 $app->get('/', function($req, $res)
 {
   	//echo "Welcome at Slim Framework";
@@ -43,10 +45,12 @@ $app->get('/', function($req, $res)
     //}
     $str = 'cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"';
     echo $str;
-    exec('cd .. && python backend.py bm "Berapa jumlah SKS minimal untuk lulus S1 di ITB"', $output);
+    exec('cd .. && python backend.py bm "milu ada berapa kali tahun"', $output);
     var_dump($output);
 });
-
+/**
+ * Route untuk webhook
+ */
 $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $channel_secret)
 {
     // get request body and line signature header
@@ -104,6 +108,9 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
     }
 });
 
+/**
+ * Melakukan proses message yang dikirim pengguna
+ */
 function processMessage($message, $user_id) {
     $arr = [];
     $reply_text = "Maaf, aku tidak mengenali kata-katamu, coba diperjelas ehe";
@@ -122,21 +129,27 @@ function processMessage($message, $user_id) {
         $reply_text = "Okok aku ganti jadi Regex";
     } else {
         exec('cd .. && python backend.py ' . $modeStr . ' "' . $message . '"', $output);
-        if($output[0] !== "None"){
+        if(sizeof($output) > 0 && $output[0] !== "None"){
             $reply_text = $output[0];
             $reply_text = ltrim($reply_text);
-        } 
+        }
     }
     return $reply_text;
 }
 
-function getDatabase($array){
+/**
+ * Mengambil isi dari database
+ * @param  Array of qna $array Isi dari database
+ * @return Array of qna        Isi dari database
+ */
+function getDatabase(){
     exec('cd .. && python database.py', $output);
     //echo $output[0];
     $output[0] = str_replace(", [", "", $output[0]);
     $output[0] = str_replace("[", "", $output[0]);  
     $output[0] = str_replace("\\n", "", $output[0]);
     $output[0] = str_replace("\\r", "", $output[0]);
+    $array = [];
     //print_r($output[0]);
     $convertedArray = explode(']', $output[0]);
     //print_r($convertedArray);
