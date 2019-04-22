@@ -185,11 +185,7 @@ def getSinonimKata(pertanyaan):
     listsinonim = []
     for kata in listkata:
         listsinonim.append(database.getSinonim(tempDict, kata))
-    listkata = []
     for element in itertools.product(*listsinonim):
-        listkata.append(element)
-
-    for element in listkata:
         yield (" ".join(element))
 
 
