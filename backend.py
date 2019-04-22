@@ -122,6 +122,7 @@ def searchWithBM(QnA,sentence):
     kecocokan = 0
     listQnA = []
     sentencebaru = stemmer.stem(stopword.remove(sentence))
+    print(sentencebaru)
     for i in range(0,len(QnA)):
         pertanyaan = QnA[i][0]
         kecocokan = BM(pertanyaan,sentencebaru)
